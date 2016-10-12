@@ -45,6 +45,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\FloorRotation.cs" />
+     <Compile Include="Assets\Scripts\HitFloor.cs" />
      <Compile Include="Assets\Scripts\LevelTrigger.cs" />
      <None Include="Assets\SpaceAssets\Textures\Glass\glass.shader" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />

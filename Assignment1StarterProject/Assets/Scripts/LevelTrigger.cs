@@ -3,14 +3,12 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 
 public class LevelTrigger : MonoBehaviour {
+    public string level;
+    public string spawnPointName;
 
-    private GameObject player;
-    public string level = "Level2";
-    public GameObject spawnPoint;
+    // Use this for initialization
+    void Start () {
 
-	// Use this for initialization
-	void Start () {
-        player = GameObject.Find("Cooper"); 
 	}
 	
 	// Update is called once per frame
@@ -21,12 +19,13 @@ public class LevelTrigger : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-
         if (other.gameObject.tag == "Player")
         {
+            print("level: " + level + "   spawnpoint: " + spawnPointName);
             DontDestroyOnLoad(other.gameObject);
-            SceneManager.LoadScene("Level2");
-            other.transform.position = GameObject.Find("SpawnPoint").transform.position;
+            SceneManager.LoadScene(level);
+            other.transform.position = GameObject.Find(spawnPointName).transform.position;
+            print("spawn point search: " + GameObject.Find(spawnPointName).name);
         }
     }
 }
